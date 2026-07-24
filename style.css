@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Scribble&display=swap');
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --sidebar-bg: #f3f4f6;
+  --primary-color: #4F46E5;
+  --border-color: #e5e7eb;
+}
+
+/* Dark Mode Override */
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #f1f1f1;
+  --sidebar-bg: #2d2d2d;
+  --border-color: #404040;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header & Branding */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-color);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.logo-container h1 {
+  margin: 0;
+  font-family: 'Rubik Scribble', cursive;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.custom-font {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+aside {
+  width: 280px;
+  background: var(--sidebar-bg);
+  padding: 1rem;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#notes-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: auto;
+}
+
+/* Inputs & Buttons */
+input {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.editor-header {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.editor-header input {
+  flex: 1;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.secondary-btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Sidebar Note Items */
+.note-item {
+  padding: 1rem 0.5rem;
+  border: 1px solid transparent;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.note-item:hover {
+  background-color: rgba(79, 70, 229, 0.1);
+}
+
+.note-item.active {
+  background-color: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+}
+
+.note-item-header {
+  margin-bottom: 0.5rem;
+}
+
+/* Tag Badges */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.tag-badge {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 0.7rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Ensure badges look good when the note is active/selected */
+.note-item.active .tag-badge {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.delete-btn {
+  background: transparent;
+  border: 1px solid red;
+  color: red;
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.note-item.active .delete-btn {
+  border-color: #ffcccc;
+  color: #ffcccc;
+}
+
+/* Settings Dropdown */
+.settings-container {
+  position: relative;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: var(--sidebar-bg);
+}
+
+.settings-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 200px;
+  z-index: 100;
+}
+
+.settings-panel.hidden {
+  display: none;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+/* Quill Editor Fixes */
+.ql-toolbar {
+  background: var(--sidebar-bg);
+  border-color: var(--border-color) !important;
+}
+.ql-container {
+  border-color: var(--border-color) !important;
+  font-size: 1.1rem;
+  flex: 1; /* Helps editor fill available space */
+}
+.ql-editor {
+  min-height: 300px;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .app-container {
+    flex-direction: column; /* Stack sidebar and editor vertically */
+  }
+  
+  aside {
+    width: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    max-height: 30vh; /* Limits sidebar height so the editor remains visible */
+  }
+  
+  .editor-header {
+    flex-direction: column; /* Stack title input and "New Note" button */
+  }
+  
+  main {
+    padding: 1rem;
+  }
+}
