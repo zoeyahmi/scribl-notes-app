@@ -60,7 +60,7 @@ scribl-notes/
 
 # Installation Guide
 
-## To run Locally:
+## To Run Locally:
 
 ### 1. Clone the repository
 
@@ -84,7 +84,7 @@ Open the `index.html` file in your browser, or use the **Live Server** extension
 
 ---
 
-##  To run with Docker:
+##  To Run with Docker:
 
 ### Build the Docker image
 
@@ -104,6 +104,33 @@ Open your browser and visit:
 http://localhost:8080
 ```
 
+## To Run from Docker Hub:
+This image is also published on Docker Hub. Alternatively, it can be run from there.
+
+### Prerequisites
+
+- Docker Desktop installed and running
+- Docker Engine is running
+
+### Pull the image from Docker Hub
+
+```bash
+docker pull zoeyahmi/scribl-notes-app:v1
+```
+
+### Run the container
+
+```bash
+docker run -d -p 8080:80 --name scribl-notes zoeyahmi/scribl-notes-app:v1
+```
+
+### Open the application
+
+Visit the following URL in your browser:
+
+```
+http://localhost:8080
+```
 
 ---
 
