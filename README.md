@@ -1,6 +1,6 @@
-# Scribl Notes
+# Scribl Notes App
 
-A simple, responsive note-taking web application built with **HTML, CSS, and JavaScript**. Scribl Notes enables users to create, organize, edit, search, and export notes. The project was developed as part of the **INS205 – Application Design and Development** assessment and has been containerized using **Docker** for easy deployment and distribution.
+A simple, responsive note-taking web application built with **HTML, CSS, and JavaScript**. Scribl Notes App enables users to create, organize, edit, search, and export notes. The project was developed as part of the **INS205 – Application Design and Development** assessment and has been containerized using **Docker** for easy deployment and distribution.
 
 <img width="800" height="350" alt="" src="https://github.com/user-attachments/assets/c7aae296-5dd5-4b13-b796-b63fa769846b" />
 
